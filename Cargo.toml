@@ -1,0 +1,18 @@
+[package]
+name = "ipsec-checker"
+version = "0.1.0"
+edition = "2021"
+description = "Check if a remote IPsec VPN service is listening"
+
+[[bin]]
+name = "ipsec-checker"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+strip = true
+opt-level = 3
+lto = true
+codegen-units = 1
